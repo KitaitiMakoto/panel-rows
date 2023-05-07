@@ -1,5 +1,10 @@
 lockfileVersion: '6.0'
 
+dependencies:
+  hybrids:
+    specifier: ^8.1.15
+    version: 8.1.15
+
 devDependencies:
   typescript:
     specifier: ^5.0.2
@@ -245,6 +250,12 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /hybrids@8.1.15:
+    resolution: {integrity: sha512-gGLKrBQE+CX6Z+LWbi7Bf9oCfWZ9gDmm9QQLsl0Kcr826ZRjknI3qVwt2lP2QxbU2DS1Cvbj3lrOnD8tlll1SA==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+    dev: false
 
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
