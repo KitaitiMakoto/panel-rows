@@ -1,5 +1,7 @@
 import {define, html} from 'hybrids';
 
+import './style.css'
+
 interface PanelRows {
 }
 
