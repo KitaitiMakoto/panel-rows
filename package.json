@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@spectrum-web-components/theme": "^0.30.0",
     "hybrids": "^8.1.15",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
