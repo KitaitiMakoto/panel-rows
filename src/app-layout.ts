@@ -1,13 +1,14 @@
-import { define, html } from "hybrids";
+import { define, html, store } from "hybrids";
+import Sidebar from "./models/Sidebar";
 
 interface AppLayout {
-  sidebarOpen: boolean;
+  sidebar: Sidebar;
 }
 
 export default define<AppLayout>({
   tag: 'app-layout',
-  sidebarOpen: false,
-  render: ({sidebarOpen}) => html`
+  sidebar: store(Sidebar),
+  render: ({sidebar}) => html`
     <div class="header">
       <slot name="header"></slot>
     </div>
@@ -15,7 +16,7 @@ export default define<AppLayout>({
       <div class="main">
         <slot name="main"></slot>
       </div>
-      <div class="sidebar" aria-hidden="${!sidebarOpen}">
+      <div class="sidebar" aria-hidden="${sidebar.open ? 'false' : 'true'}">
         <slot name="sidebar"></slot>
       </div>
     </div>
@@ -41,7 +42,7 @@ export default define<AppLayout>({
 
     .main {
       flex-shrink: 0;
-      inline-size: ${sidebarOpen ? 'calc(100% - var(--sidebar-width))' : '100%'};
+      inline-size: ${sidebar.open ? 'calc(100% - var(--sidebar-width))' : '100%'};
       block-size: 100%;
       transition: inline-size 200ms;
       overflow: scroll;

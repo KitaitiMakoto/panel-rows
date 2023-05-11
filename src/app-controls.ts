@@ -1,4 +1,6 @@
-import { define, html } from "hybrids";
+import { define, html, store } from "hybrids";
+
+import Sidebar from './models/Sidebar';
 
 import '@spectrum-web-components/action-group/sp-action-group.js';
 import '@spectrum-web-components/action-button/sp-action-button.js';
@@ -13,7 +15,7 @@ export default define<AppControls>({
     <sp-action-group>
     </sp-action-group>
     <sp-action-group>
-      <sp-action-button>
+      <sp-action-button selected="${store.get(Sidebar).open}" onclick="${() => store.set(Sidebar, {open: !store.get(Sidebar).open})}">
         <sp-icon-settings slot="icon"></sp-icon-settings>
         設定
       </sp-action-button>
