@@ -6,6 +6,7 @@ import './style.css';
 
 import './app-layout';
 import './app-controls';
+import './app-borad';
 
 interface PanelRows {
 }
@@ -19,7 +20,9 @@ export default define<PanelRows>({
         <header slot="header">
           <app-controls></app-controls>
         </header>
-        <div slot="main">App</div>
+        <div slot="main">
+          <app-board src="/runes.json"></app-board>
+        </div>
         <aside slot="sidebar">Settings</aside>
       </app-layout>
       <footer>
